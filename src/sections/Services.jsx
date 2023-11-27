@@ -1,5 +1,6 @@
+import { services } from "../constants";
 const Services = () => {
-  return <div>Services</div>;
+  return <section id="services">dd</section>;
 };
 
 export default Services;
