@@ -1,5 +1,31 @@
+import { reviews } from "../constants";
+import ReviewCard from "../components/ReviewCard";
+
 const CustomerReview = () => {
-  return <div>Customerreview</div>;
+  return (
+    <section id="customerreview">
+      <h3 className="font-palanquin text-4xl font-bold text-center">
+        What Our
+        <span className="text-coral-red"> Customers</span> Say?
+      </h3>
+      <p className="info-text text-center mt-4 m-auto max-w-lg">
+        Hear genuine stories from our satisfied customers about their
+        exceptional experiences with us.
+      </p>
+      <div className="mt-24 flex flex-1 justify-center items-center max-lg:flex-col gap-14">
+        {reviews.map((review) => (
+          <ReviewCard
+            {...review}
+            key={review.imgURL}
+            imgURL={review.imgURL}
+            customerName={review.customerName}
+            rating={review.rating}
+            feedback={review.feedback}
+          />
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default CustomerReview;
