@@ -4,11 +4,14 @@ const Button = ({
   backgroundColor,
   borderColor,
   textColor,
+  fullWidth,
 }) => {
   const buttonstyle = `${
     backgroundColor
-      ? `${backgroundColor} ${borderColor} ${textColor} rounded-full flex justify-center items-center gap-2 px-7 py-3 font-montserrat text-md border leading-none`
-      : "bg-coral-red text-white rounded-full flex justify-center items-center gap-2 px-7 py-3 font-montserrat text-md border border-coral-red leading-none"
+      ? `${backgroundColor} ${borderColor} ${textColor} rounded-full flex justify-center items-center gap-2 px-7 py-3 font-montserrat text-md border leading-none w-full`
+      : `bg-coral-red text-white rounded-full flex justify-center items-center gap-2 px-7 py-3 font-montserrat text-md border border-coral-red leading-none ${
+          fullWidth && "w-full"
+        }`
   }`;
   return (
     <button className={buttonstyle}>
